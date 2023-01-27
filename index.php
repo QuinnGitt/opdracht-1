@@ -25,6 +25,25 @@
         <label for="haircolor">Haarkleur:</label><br>
         <input type="text" name="haircolor" id="haircolor"><br>
         <br>
+        <label for="phonenumber">Telefoonnummer:</label><br>
+        <input type="number" name="phonenumber" id="phonenumber"><br>
+        <br>
+        <label for="streetname">Straatnaam:</label><br>
+        <input type="text" name="streetname" id="streetname"><br>
+        <br>
+        <label for="housenumber">Huisnummer:</label><br>
+        <input type="number" name="housenumber" id="housenumber"><br>
+        <br>
+        <label for="city">Woonplaats:</label><br>
+        <input type="text" name="city" id="city"><br>
+        <br>
+        <label for="postalcode">Postcode:</label><br>
+        <input type="text" name="postalcode" id="postalcode"><br>
+        <br>
+        <label for="country">Landnaam:</label><br>
+        <input type="text" name="country" id="country"><br>
+        <br>
+        
         <input type="submit" value="Verstuur!">        
 
     </form>

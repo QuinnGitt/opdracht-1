@@ -26,6 +26,12 @@
                 ,Tussenvoegsel
                 ,Achternaam
                 ,Haarkleur
+                ,Telefoonnummer
+                ,Straatnaam
+                ,Huisnummer
+                ,Woonplaats
+                ,Postcode
+                ,Landnaam
           FROM Persoon";
 
   // Maak de sql-query gereed om te worden uitgevoerd op de database
@@ -48,6 +54,12 @@
                 <td>$info->Tussenvoegsel</td>
                 <td>$info->Achternaam</td>
                 <td>$info->Haarkleur</td>
+                <td>$info->Telefoonnummer</td>
+                <td>$info->Straatnaam</td>
+                <td>$info->Huisnummer</td>
+                <td>$info->Woonplaats</td>
+                <td>$info->Postcode</td>
+                <td>$info->Landnaam</td>
                 <td>
                     <a href='delete.php?Id=$info->Id'>
                         <img src='img/b_drop.png' alt='kruis'>
@@ -89,8 +101,12 @@
             <th>Tussenvoegsel</th>
             <th>Achternaam</th>
             <th>Haarkleur</th>
-            <th></th>
-            <th></th>
+            <th>Telefoonnummer</th>
+            <th>Straatnaam</th>
+            <th>Huisnummer</th>
+            <th>Woonplaats</th>
+            <th>Postcode</th>
+            <th>Landnaam</th>
         </thead>
         <tbody>
             <?= $rows; ?>

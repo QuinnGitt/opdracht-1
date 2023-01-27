@@ -26,7 +26,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             SET    Voornaam = :firstname, 
                    Tussenvoegsel = :infix, 
                    Achternaam = :lastname,
-                   Haarkleur = :haircolor
+                   Haarkleur = :haircolor,
+                   Telefoonnummer = :phonenumber,
+                   Straatnaam = :streetname,
+                   Huisnummer = :housenumber,
+                   Woonplaats = :city,
+                   Postcode = :postalcode,
+                   Landnaam = :country
             WHERE  Id = :id";
 
     $statement = $pdo->prepare($sql);
@@ -36,6 +42,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $statement->bindValue(':lastname', $_POST['lastname'], PDO::PARAM_STR);
     $statement->bindValue(':haircolor', $_POST['haircolor'], PDO::PARAM_STR);
     $statement->bindValue(':id', $_POST['id'], PDO::PARAM_INT);
+    $statement->bindValue(':phonenumber', $_POST['phonenumber'], PDO::PARAM_STR);
+    $statement->bindValue(':streetname', $_POST['streetname'], PDO::PARAM_STR);
+    $statement->bindValue(':housenumber', $_POST['housenumber'], PDO::PARAM_int);
+    $statement->bindValue(':city', $_POST['city'], PDO::PARAM_STR);
+    $statement->bindValue(':postalcode', $_POST['postalcode'], PDO::PARAM_STR);
+    $statement->bindValue(':country', $_POST['country'], PDO::PARAM_STR);
+
 
     $statement->execute();
 
@@ -57,6 +70,12 @@ $sql = "SELECT Id
               ,Tussenvoegsel
               ,Achternaam
               ,Haarkleur
+              ,Telefoonnummer
+              ,Straatnaam
+              ,Huisnummer
+              ,Woonplaats
+              ,Postcode
+              ,Landnaam
         FROM Persoon
         WHERE Id = :Id";
 
@@ -107,7 +126,27 @@ $result = $statement->fetch(PDO::FETCH_OBJ);
         <label for="haircolor">Haarkleur:</label><br>
         <input type="text" name="haircolor" id="haircolor" value="<?= $result->Haarkleur; ?>"><br>
         <br>
+        <label for="phonenumber">Telefoonnummer:</label><br>
+        <input type="number" name="phonenumber" id="phonenumber" value="<?= $result->Haarkleur; ?>"><br>
+        <br>
+        <label for="streetname">Straatnaam:</label><br>
+        <input type="text" name="streetname" id="streetname" value="<?= $result->Haarkleur; ?>"><br>
+        <br>
+        <label for="housenumber">Huisnummer:</label><br>
+        <input type="number" name="housenumber" id="housenumber" value="<?= $result->Haarkleur; ?>"><br>
+        <br>
+        <label for="city">Woonplaats:</label><br>
+        <input type="text" name="city" id="city" value="<?= $result->Haarkleur; ?>"><br>
+        <br>
+        <label for="postalcode">Postcode:</label><br>
+        <input type="text" name="postalcode" id="postalcode" value="<?= $result->Haarkleur; ?>"><br>
+        <br>
+        <label for="country">Landnaam:</label><br>
+        <input type="text" name="country" id="country" value="<?= $result->Haarkleur; ?>"><br>
+        <br>
         <input type="hidden" name="id" value="<?= $result->Id; ?>">
+        <br>
+
 
         <input type="submit" value="Verstuur!">        
 
